@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "forex-tester-faq-backend"
+version = "0.1.0"
+description = ""
+authors = ["GivenFLY <alexey.givenfly.moshura@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openai = "^0.27.8"
+langchain = "^0.0.200"
+django = "^4.2.2"
+django-dotenv = "^1.4.2"
+djangorestframework = "^3.14.0"
+pandas = "^2.0.2"
+scikit-learn = "^1.2.2"
+django-cors-headers = "^4.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
