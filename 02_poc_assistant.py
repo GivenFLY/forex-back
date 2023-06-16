@@ -4,16 +4,15 @@ from pprint import pprint
 
 import dotenv
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-dotenv.read_dotenv(os.path.join(BASE_DIR, ".env"))
+dotenv.read_dotenv()
 
 from core.assistant import FAQAssistant
 
 
 def main():
     assistant = FAQAssistant(
-        embeddings_file_path=os.path.join(BASE_DIR, "static/FAQ.pkl"),
-        faq_file_path=os.path.join(BASE_DIR, "static/FAQ.json"),
+        embeddings_file_path="static/FAQ.pkl",
+        faq_file_path="static/static/FAQ.json",
     )
 
     while True:

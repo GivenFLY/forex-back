@@ -1,5 +1,4 @@
 """Creating embeddings for FAQ questions."""
-
 import json
 import os
 import time
@@ -7,16 +6,13 @@ import time
 import dotenv
 import pandas as pd
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-dotenv.read_dotenv(os.path.join(BASE_DIR, ".env"))
+dotenv.read_dotenv()
 
 from core.question import Question
 
 
 def main():
-    questions = json.load(
-        open(os.path.join(BASE_DIR, "static/FAQ.json"), "r", encoding="utf-8")
-    )
+    questions = json.load(open("static/FAQ.json", "r", encoding="utf-8"))
 
     frames = []
 
@@ -27,7 +23,7 @@ def main():
         time.sleep(0.5)
 
     data_frame = pd.concat(frames, ignore_index=True)
-    data_frame.to_pickle(os.path.join(BASE_DIR, "static/FAQ.pkl"))
+    data_frame.to_pickle("static/FAQ.pkl")
 
 
 if __name__ == "__main__":
